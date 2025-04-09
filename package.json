@@ -1,6 +1,6 @@
 {
   "name": "@neui/react-treeview",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React component library to render data into tree view",
   "license": "MIT",
   "keywords": [

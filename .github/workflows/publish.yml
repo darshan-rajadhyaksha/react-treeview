@@ -65,9 +65,3 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git tag -a "v${{ steps.check.outputs.new_version }}" -m "v${{ steps.check.outputs.new_version }}"
           git push origin "v${{ steps.check.outputs.new_version }}"
-
-
-
-
-
-        

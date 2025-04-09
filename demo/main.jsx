@@ -18,16 +18,16 @@ const treeData = [
             label: "File 1.1.2",
             key: "1.1.2",
           },
-					{
-						label: "Folder 1.1.3",
-						key: "1.1.3",
-						children: [
-							{
-								label: "File 1.1.1.1",
-								key: "1.1.1.1",
-							},
-						],
-					}
+          {
+            label: "Folder 1.1.3",
+            key: "1.1.3",
+            children: [
+              {
+                label: "File 1.1.1.1",
+                key: "1.1.1.1",
+              },
+            ],
+          }
         ]
       },
       {
@@ -48,7 +48,7 @@ const treeData = [
   }
 ];
 
-function App(){
+function App() {
   return (
     <div className="tree-view-preview">
       <TreeView
