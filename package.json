@@ -1,6 +1,6 @@
 {
   "name": "@neui/react-treeview",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "React component library to render data into tree view",
   "license": "MIT",
   "keywords": [
@@ -13,7 +13,7 @@
   "author": "Darshan Rajadhyaksha",
   "repository": {
     "type": "git",
-    "url": "https://github.com/darshan-rajadhyaksha/neui_react-treeview"
+    "url": "https://github.com/darshan-rajadhyaksha/react-treeview"
   },
   "type": "module",
   "main": "dist/index.cjs.js",

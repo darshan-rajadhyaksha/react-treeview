@@ -44,9 +44,16 @@
       padding-left: 6px;
     }
 
-    .tree-node__icon {
-      display: grid;
-      place-items: center;
+    .tree-node__icon,
+    .tree-node__checkbox {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .tree-node__checkbox input {
+      margin-top:0;
+      margin-bottom:0;
     }
 
     .tree-node__icon--hidden {

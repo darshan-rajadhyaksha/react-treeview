@@ -16,7 +16,7 @@ describe("TreeNodeRenderer", () => {
           }
         ]
       },
-      handleClick: jest.fn(),
+      onClick: jest.fn(),
       isDisabled: false,
     };
 
@@ -25,7 +25,7 @@ describe("TreeNodeRenderer", () => {
     const treeNode = screen.getByText(/Folder 1/);
     expect(treeNode).toBeInTheDocument();
     fireEvent.click(treeNode);
-    expect(props.handleClick).toBeCalled();
+    expect(props.onClick).toBeCalled();
   });
 
   it("should render leaf tree node properly", () => {
@@ -34,7 +34,7 @@ describe("TreeNodeRenderer", () => {
         label: "File 1.1",
         key: "1.1"
       },
-      handleClick: jest.fn(),
+      onClick: jest.fn(),
       isDisabled: false,
     };
 
@@ -43,7 +43,7 @@ describe("TreeNodeRenderer", () => {
     const treeNode = screen.getByText(/File 1.1/);
     expect(treeNode).toBeInTheDocument();
     fireEvent.click(treeNode);
-    expect(props.handleClick).toBeCalled();
+    expect(props.onClick).toBeCalled();
   });
 
   it("should render disabled tree node properly", () => {
@@ -52,7 +52,7 @@ describe("TreeNodeRenderer", () => {
         label: "File 1.1",
         key: "1.1",
       },
-      handleClick: jest.fn(),
+      onClick: jest.fn(),
       isDisabled: true,
     };
 
@@ -62,7 +62,7 @@ describe("TreeNodeRenderer", () => {
     expect(treeDomNode).toBeInTheDocument();
     expect(treeDomNode.style.opacity).toBe("0.5");
     fireEvent.click(treeDomNode);
-    expect(props.handleClick).not.toBeCalled();
+    expect(props.onClick).not.toBeCalled();
   });
 
 });

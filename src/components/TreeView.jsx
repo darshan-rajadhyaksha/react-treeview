@@ -14,7 +14,7 @@ const TreeView = memo((props) => {
     showIcon = false,
     showLine = false,
 
-    onCheck,
+    onSelect,
     onClick,
 
     customTreeNodeRenderer,
@@ -62,7 +62,7 @@ const TreeView = memo((props) => {
     enableSelection,
     showIcon,
     dispatch,
-    onCheck,
+    onSelect,
     onClick
   }), [
     TreeNodeRenderer,
@@ -71,7 +71,7 @@ const TreeView = memo((props) => {
     showIcon,
     state,
     dispatch,
-    onCheck,
+    onSelect,
     onClick,
   ]);
 
@@ -87,7 +87,7 @@ const TreeView = memo((props) => {
       <div className={classes.treeViewWrapper}>
         <ul role="tree">
           {treeData.map((item) => (
-            <TreeItems key={item.key} node={item} {...({ onCheck, onClick })} />
+            <TreeItems key={item.key} node={item} {...({ onSelect, onClick })} />
           ))}
         </ul>
       </div>

@@ -9,7 +9,7 @@ const TreeItems = memo((props) => {
   const {
     // event handler
     onClick,
-    onCheck,
+    onSelect,
 
     // renderer
     TreeNodeRenderer,
@@ -57,12 +57,16 @@ const TreeItems = memo((props) => {
       }
     }
 
+    const nodeWithoutChildren = { ... node };
+    delete nodeWithoutChildren.children;
+
     onClick?.({
-      node,
+      node: nodeWithoutChildren,
       isExpanded: !isExpanded,
+      isDisabled,
       isSelected,
     });
-  }, [node, isExpanded, dispatch, isSelected, onClick]);
+  }, [node, isExpanded, dispatch, isSelected, isDisabled, onClick]);
 
   const handleSelect = useCallback(() => {
     if (isSelected) {
@@ -81,13 +85,16 @@ const TreeItems = memo((props) => {
       });
     }
 
+    const nodeWithoutChildren = { ... node };
+    delete nodeWithoutChildren.children;
 
-    onCheck?.({
-      node,
+    onSelect?.({
+      node: nodeWithoutChildren,
       isSelected: !isSelected,
+      isDisabled,
       isExpanded,
     });
-  }, [node, isExpanded, dispatch, isSelected, onCheck]);
+  }, [node, isExpanded, dispatch, isSelected, isDisabled, onSelect]);
 
   const classes = useMemo(() => {
     return {
@@ -112,8 +119,8 @@ const TreeItems = memo((props) => {
     isExpanded,
     isSelected,
     isDisabled,
-    handleClick,
-    handleSelect,
+    onClick: handleClick,
+    onSelect: handleSelect,
   };
 
   return (

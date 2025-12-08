@@ -28,9 +28,9 @@ yarn add @neui/react-treeview
 | `enableSelection`        | `bool`            | `false`       | Allows nodes to be selected                                     |
 | `showIcon`               | `bool`            | `false`       | Show icon for non-leaf and leaf node                            |
 | `showLine`               | `bool`            | `false`       | Show line indicator to visualize depth of tree                  |
-| `defaultSelectedIds`     | `array[node.key]` | `[]`          | Array with the ids of the default selected nodes                |
-| `defaultSelectedIds`     | `array[node.key]` | `[]`          | Array with the ids of the default expanded nodes                |
-| `defaultSelectedIds`     | `array[node.key]` | `[]`          | Array with the ids of the default disabled nodes                |
+| `defaultSelectedKeys`    | `array[node.key]` | `[]`          | Array with the ids of the default selected nodes                |
+| `defaultExpandedKeys`    | `array[node.key]` | `[]`          | Array with the ids of the default expanded nodes                |
+| `defaultDisabledKeys`    | `array[node.key]` | `[]`          | Array with the ids of the default disabled nodes                |
 
 
 ### data (tree-node)
@@ -92,6 +92,12 @@ const data = [
 ];
 ```
 
+### onClick
+`onClick({ node, isSelected, isExpanded, isDisabled })`
+
+### onSelect
+`onClick({ node, isSelected, isExpanded, isDisabled })`
+
 ### treeNodeRenderer & iconRenderer
 
 | Property         | Type         | Description                                                                                           |
@@ -101,12 +107,5 @@ const data = [
 | `isSelected`     | `bool`       | Whether the rendered node is selected                                                                 |
 | `isExpanded`     | `bool`       | Whether the rendered node is expanded                                                                 |
 | `isDisabled`     | `bool`       | Whether the rendered node is disabled                                                                 |
-| `handleSelect`   | `function`   | Function to assign to the onClick event handler of the element(s) that will toggle the selected state |
-| `handleExpand`   | `function`   | Function to assign to the onClick event handler of the element(s) that will toggle the expanded state |
-
-
-### onClick
-`onClick({ node, isSelected, isExpanded, isDisabled })`
-
-### onSelect
-`onClick({ node, isSelected, isExpanded, isDisabled })`
+| `onClick`        | `function`   | Function to assign to the onClick event handler of the element(s) that will toggle the expanded state |
+| `onSelect`       | `function`   | Function to assign to the onClick event handler of the element(s) that will toggle the selected state |

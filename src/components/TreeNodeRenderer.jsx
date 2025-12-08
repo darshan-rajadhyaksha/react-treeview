@@ -1,20 +1,20 @@
 import React, { memo, useCallback } from "react";
 
-const TreeNodeRenderer = memo(({ node, isDisabled, handleClick }) => {
+const TreeNodeRenderer = memo(({ node, isDisabled, onClick }) => {
 
   const onTreeNodeClick = useCallback(() => {
     if (!isDisabled) {
-      handleClick();
+      onClick();
     }
-  }, [isDisabled, handleClick]);
+  }, [isDisabled, onClick]);
 
   return (
     <span
       onClick={onTreeNodeClick}
       style={{
         opacity: isDisabled ? 0.5 : 1,
-        padding: "0.135em 0.25em",
-        borderRadius: "0.25em",
+        padding: "0 8px",
+        borderRadius: "4px",
         "&:hover": {
           background: "#eee",
         },

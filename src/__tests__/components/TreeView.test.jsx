@@ -118,10 +118,10 @@ describe("TreeView", () => {
     expect(props.onClick).toBeCalled();
   });
 
-  it("should call onCheck handler on select/deselect of tree node", () => {
+  it("should call onSelect handler on select/deselect of tree node", () => {
     const props = getMockProps({
       enableSelection: true,
-      onCheck: jest.fn(),
+      onSelect: jest.fn(),
     });
 
     const { container } = render(
@@ -135,19 +135,19 @@ describe("TreeView", () => {
 
     fireEvent.click(level1treeNodeCheckbox);
     expect(level1treeNodeCheckbox.checked).toBe(true);
-    expect(props.onCheck).toBeCalled();
+    expect(props.onSelect).toBeCalled();
 
     fireEvent.click(level1treeNodeCheckbox);
     expect(level1treeNodeCheckbox.checked).toBe(false);
-    expect(props.onCheck).toBeCalled();
+    expect(props.onSelect).toBeCalled();
 
   });
 
-  it("should not call onCheck handler on select/deselect of tree node", () => {
+  it("should not call onSelect handler on select/deselect of tree node", () => {
     const props = getMockProps({
       defaultDisabledKeys: ["1"],
       enableSelection: true,
-      onCheck: jest.fn(),
+      onSelect: jest.fn(),
     });
 
     const { container } = render(
