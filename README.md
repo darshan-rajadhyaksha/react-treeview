@@ -1,4 +1,8 @@
 # React-Treeview
+React component library to render data into tree view.
+
+[Open in CodeSandbox](https://codesandbox.io/p/sandbox/rc44sp)
+
 ### Features
 - Customization of tree node and icon.
 - Select / Unselect nodes.
